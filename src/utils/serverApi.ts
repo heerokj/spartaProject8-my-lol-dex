@@ -5,19 +5,12 @@ import { Version } from "@/types/Champion";
 //   "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations"
 // );
 //url.search = new URLSearchParams(params).toString();
-//TODO - 서버액션 headers없어도 돼??
 
 // Data Dragon API의 버전 정보 가져오기
 async function getAPIVersion() {
   try {
     const res = await fetch(
-      "https://ddragon.leagueoflegends.com/api/versions.json",
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "X-Riot-Token": process.env.NEXT_PUBLIC_RIOT_API_KEY!,
-        },
-      }
+      "https://ddragon.leagueoflegends.com/api/versions.json"
     );
 
     const data: Version = await res.json();
@@ -36,10 +29,6 @@ export async function getChampionList() {
     const res = await fetch(
       `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/champion.json`,
       {
-        headers: {
-          "Content-Type": "application/json",
-          "X-Riot-Token": process.env.NEXT_PUBLIC_RIOT_API_KEY!,
-        },
         next: {
           revalidate: 86400, //86400초
         },
@@ -74,10 +63,6 @@ export async function getItemList() {
     const res = await fetch(
       `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/item.json`,
       {
-        headers: {
-          "Content-Type": "application/json",
-          "X-Riot-Token": process.env.NEXT_PUBLIC_RIOT_API_KEY!,
-        },
         cache: "force-cache", //SSG : force-cache 옵션 주기
       }
     );
