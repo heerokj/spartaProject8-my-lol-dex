@@ -1,4 +1,5 @@
 import { Champion } from "@/types/Champion";
+import { getAPIVersion } from "@/utils/serverApi";
 import Image from "next/image";
 
 type Props = {
@@ -7,7 +8,8 @@ type Props = {
   };
 };
 
-const ChampionDetail = ({ champion }: Props) => {
+const ChampionDetail = async ({ champion }: Props) => {
+  const version = await getAPIVersion();
   //console.log("champion===>", champion); //ANCHOR - 1
   const cham = champion.data;
   const chamData: Champion[] = Object.values(cham);
@@ -21,7 +23,7 @@ const ChampionDetail = ({ champion }: Props) => {
       </div>
 
       <Image
-        src={`https://ddragon.leagueoflegends.com/cdn/14.19.1/img/champion/${data.image.full}`}
+        src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${data.image.full}`}
         alt="Picture of the author"
         width={250}
         height={250}

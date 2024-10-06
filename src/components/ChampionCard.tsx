@@ -1,10 +1,11 @@
 import { Champion } from "@/types/Champion";
-import { getChampionList } from "@/utils/serverApi";
+import { getAPIVersion, getChampionList } from "@/utils/serverApi";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const ChampionCard = async () => {
+  const version = await getAPIVersion();
   const data = await getChampionList(); //ANCHOR -1 data의 값
   //console.log("data===>", data.type); //champion
   const chamData = data.data; //ANCHOR - 2 chamData의 값
@@ -20,7 +21,7 @@ const ChampionCard = async () => {
             className="border-2 border-[#363e50ba] p-4 rounded-md flex flex-col items-center"
           >
             <Image
-              src={`https://ddragon.leagueoflegends.com/cdn/14.19.1/img/champion/${champion.image.full}`}
+              src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champion.image.full}`}
               alt="Picture of the author"
               width={100}
               height={100}

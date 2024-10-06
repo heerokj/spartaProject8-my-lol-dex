@@ -7,7 +7,7 @@ import { Version } from "@/types/Champion";
 //url.search = new URLSearchParams(params).toString();
 
 // Data Dragon API의 버전 정보 가져오기
-async function getAPIVersion() {
+export async function getAPIVersion() {
   try {
     const res = await fetch(
       "https://ddragon.leagueoflegends.com/api/versions.json"

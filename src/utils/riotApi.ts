@@ -1,14 +1,30 @@
+import { getChampionList } from "./serverApi";
+
 // 챔피언 로테이션 데이터 가져오기
 export async function getChampionRotation() {
   try {
     const response = await fetch("/api/rotation"); //?api 레이어 사용방식?
     const data = await response.json();
-    console.log("data", data);
-    return data;
+    const freeChampionIds = data.freeChampionIds;
+
+    //챔피언 목록
+    const resCham = await getChampionList();
+    const dataCham = resCham.data;
+    const champions = Object.values(dataCham);
+    //console.log("champions===>", champions);
+
+    //로테이션에 포함한 챔피언 목록
+    const selectedCampions = champions.filter((champion) =>
+      freeChampionIds.includes(Number(champion.key))
+    );
+    // console.log("selectedCampions===>", selectedCampions);
+    // console.log("selectedCampions.length", selectedCampions.length);
+    return selectedCampions;
   } catch (error) {
     console.error(error);
   }
 
+  //TODO -
   // try {
   //   //로테이션
   //   const resRo = await GET();
