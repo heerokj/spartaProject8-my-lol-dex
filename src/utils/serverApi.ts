@@ -1,12 +1,6 @@
 import { Version } from "@/types/Champion";
 
-//const url = "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations";
-// const url = new URL(
-//   "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations"
-// );
-//url.search = new URLSearchParams(params).toString();
-
-// Data Dragon API의 버전 정보 가져오기
+//SECTION - Data Dragon API의 버전 정보 가져오기
 export async function getAPIVersion() {
   try {
     const res = await fetch(
@@ -22,7 +16,7 @@ export async function getAPIVersion() {
   }
 }
 
-//챔피언 목록 데이터 가져오기
+//SECTION - 챔피언 목록 데이터 가져오기
 export async function getChampionList() {
   try {
     const version = await getAPIVersion();
@@ -42,13 +36,13 @@ export async function getChampionList() {
   }
 }
 
-//챔피언 상세 정보 불러오기
+//SECTION - 챔피언 상세 정보 불러오기
 export async function fetchChampionDetail(id: string) {
   try {
     const res = await fetch(
       `https://ddragon.leagueoflegends.com/cdn/14.19.1/data/ko_KR/champion/${id}.json`
     );
-    const data = await res.json(); //TODO - 타입적어주는게 낫나?
+    const data = await res.json();
 
     return data;
   } catch (error) {
@@ -63,7 +57,7 @@ export async function getItemList() {
     const res = await fetch(
       `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/item.json`,
       {
-        cache: "force-cache", //SSG : force-cache 옵션 주기
+        cache: "force-cache",
       }
     );
     const data = await res.json();

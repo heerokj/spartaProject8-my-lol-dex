@@ -1,10 +1,3 @@
-// export type Data = {
-//   type: string;
-//   format: string;
-//   version: string;
-//   data: object;
-// };
-
 export type Champion = {
   version: string;
   id: string;

@@ -15,8 +15,12 @@ const RotationCard = () => {
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
-      const data = await getChampionRotation();
-      setRotation(data); //TODO -
+      const data = await getChampionRotation(); //: Rotation[]하면 오류.. getChampionRotation() 함수가 반환하는 값이 실제로 Rotation[] 타입임이 보장되지 않음 => 그럼..?함수 return 값에?
+      //console.log("data", data);
+      //[{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, ]
+      // {version: '14.19.1', id: 'Bard', key: '432', name: '바드', title: '영겁의 수호자', …}
+
+      setRotation(data as Rotation[]); //TODO - data:Rotation[]
       setIsLoading(false);
     };
     fetchData();

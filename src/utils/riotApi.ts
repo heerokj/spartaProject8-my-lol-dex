@@ -1,3 +1,4 @@
+import { Rotation } from "@/types/Rotation";
 import { getChampionList } from "./serverApi";
 
 // 챔피언 로테이션 데이터 가져오기
@@ -10,8 +11,8 @@ export async function getChampionRotation() {
     //챔피언 목록
     const resCham = await getChampionList();
     const dataCham = resCham.data;
-    const champions = Object.values(dataCham);
-    //console.log("champions===>", champions);
+    const champions: Rotation[] = Object.values(dataCham);
+    console.log("champions===>", champions);
 
     //로테이션에 포함한 챔피언 목록
     const selectedCampions = champions.filter((champion) =>
