@@ -3,7 +3,7 @@ import { getChampionList } from "./serverApi";
 // 챔피언 로테이션 데이터 가져오기
 export async function getChampionRotation() {
   try {
-    const response = await fetch("/api/rotation"); //?api 레이어 사용방식?
+    const response = await fetch("/api/rotation"); //클라이언트 측에서 Next.js의 API 엔드포인트에 요청을 보내는 방법
     const data = await response.json();
     const freeChampionIds = data.freeChampionIds;
 
@@ -27,7 +27,7 @@ export async function getChampionRotation() {
   //TODO -
   // try {
   //   //로테이션
-  //   const resRo = await GET();
+  //   const resRo = await GET(); //Next.js API 핸들러 함수 (GET)를 직접 호출
   //   const data = await resRo.json();
   //   const rotation = data.data.freeChampionIds;
   //   //console.log("rotation===>", rotation);

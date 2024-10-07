@@ -22,7 +22,7 @@ export async function GET() {
       {
         // credentials: "include",
         // method: "GET",
-        mode: "no-cors", //TODO - 질문 CORS오류로 넣어줌 : 관련 오류를 무시하기 위한 설정이지만, 이 경우 fetch가 성공적으로 동작하더라도 응답 데이터를 제대로 받을 수 없다 (?)
+        //mode: "no-cors", //TODO - 질문 CORS오류로 넣어줌 : 관련 오류를 무시하기 위한 설정이지만, 이 경우 fetch가 성공적으로 동작하더라도 응답 데이터를 제대로 받을 수 없다 (?)
         headers: {
           "Content-Type": "application/json",
           "X-Riot-Token": process.env.NEXT_PUBLIC_RIOT_API_KEY!,
