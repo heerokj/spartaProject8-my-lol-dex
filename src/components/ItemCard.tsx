@@ -12,7 +12,7 @@ const ItemCard = async () => {
     <div className="grid grid-cols-6 gap-4">
       {itemData.map((item) => (
         <div
-          key={item.image.full} //키..
+          key={item.image.full}
           className="border-2 border-[#363e50ba] p-4 rounded-md flex flex-col items-center"
         >
           <Image

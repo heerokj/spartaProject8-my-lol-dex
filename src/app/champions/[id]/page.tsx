@@ -21,7 +21,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const championDetailPage = async ({ params }: Props) => {
-  //console.log("params", params); //{ id: 'Ahri' }
   const id = params.id;
   const data = await fetchChampionDetail(id);
   return (

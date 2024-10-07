@@ -28,7 +28,7 @@ export async function getChampionList() {
         },
       }
     );
-    const data = await res.json(); //TODO - 타입적어주는게 낫나?
+    const data = await res.json();
 
     return data;
   } catch (error) {

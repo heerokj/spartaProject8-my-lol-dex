@@ -1,4 +1,3 @@
-//아이템의 가격 정보, 스탯 정보도 포함
 export type Item = {
   name: string;
   plaintext: string;
@@ -15,7 +14,7 @@ export type Item = {
     base: number;
     total: number;
     sell: number;
-    purchasable: number | boolean; //판매할때 | 안할때(false)
+    purchasable: number | boolean;
   };
   stats: {
     FlatMovementSpeedMod: number;
