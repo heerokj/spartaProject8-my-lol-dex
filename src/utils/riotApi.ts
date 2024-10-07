@@ -6,7 +6,7 @@ export async function getChampionRotation() {
   try {
     const response = await fetch("/api/rotation");
     const data = await response.json();
-    const freeChampionIds = data.freeChampionIds;
+    const freeChampionIds: number[] = data.freeChampionIds;
 
     //챔피언 목록
     const resCham = await getChampionList();
