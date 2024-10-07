@@ -4,10 +4,7 @@ NextJS와 TypeScript를 사용하여 Riot API를 활용한 리그 오브 레전�
 
 배포 링크 : [`sparta-project8-my-lol-dex.vercel.app`](https://sparta-project8-my-lol-dex.vercel.app)
 
-<br/>
-깃허브 링크 : [`https://github.com/heerokj/spartaProject8-my-lol-dex.git`](https://github.com/heerokj/spartaProject8-my-lol-dex.git)
-<br/>
-<br/>
+깃허브 링크: [`https://github.com/heerokj/spartaProject8-my-lol-dex.git`](https://github.com/heerokj/spartaProject8-my-lol-dex.git)
 
 ## 파일 구조
 
@@ -19,7 +16,6 @@ NextJS와 TypeScript를 사용하여 Riot API를 활용한 리그 오브 레전�
 
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1728322979643?alt=media&token=4dfcb522-2940-4e03-a24a-3708cdb36e92)](https://github.com/msdio/stackticon)
 
-<br/>
 <br/>
 
 ## 프로젝트 설치 및 실행 방법
@@ -42,26 +38,29 @@ yarn dev
 ```
 
 <br/>
-<br/>
 
 ## 주요 기능
 
-1. 홈 페이지<br/>
+1. 홈 페이지
+
    ![alt text](image-2.png)
    <br/>
    화면의 이미지를 클릭하면 챔피언 목록 페이지, 아이템 목록 페이지, 챔피언 로테이션 페이지로 이동합니다. 또한 네비게이션 바를 통해서도 페이지 이동이 가능합니다. <br/>
 
-2. 챔피언 목록 페이지<br/>
+2. 챔피언 목록 페이지
+
    ![alt text](image-3.png)
    <br/>
    롤 챔피언 전체 목록을 볼 수 있습니다.<br/>
 
-3. 챔피언 상세 페이지<br/>
+3. 챔피언 상세 페이지
+
    ![alt text](image-4.png)
    <br/>
    챔피언 목록 페이지에서 챔피언을 클릭하면 챔피언 상세내용을 볼 수 있습니다.<br/>
 
-4. 챔피언 로테이션 페이지<br/>
+4. 챔피언 로테이션 페이지
+
    ![alt text](image-5.png)
    <br/>
    챔피언 로테이션 목록을 볼 수 있습니다. 챔피언을 클릭하면 해당 챔피언의 상세 내용을 볼 수 있는 페이지로 이동합니다.
