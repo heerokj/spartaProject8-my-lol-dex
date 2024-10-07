@@ -6,7 +6,13 @@ export async function getChampionRotation() {
   try {
     const response = await fetch("/api/rotation");
     const data = await response.json();
-    const freeChampionIds: number[] = data.freeChampionIds;
+    //const freeChampionIds: number[] = data.freeChampionIds;
+
+    // freeChampionIds가 제대로 존재하는지 확인
+    const freeChampionIds = data.freeChampionIds || [];
+    if (!Array.isArray(freeChampionIds)) {
+      throw new Error("freeChampionIds is not an array");
+    }
 
     //챔피언 목록
     const resCham = await getChampionList();
